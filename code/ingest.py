@@ -26,3 +26,6 @@ df = filter_df(df)
 
 #Tests
 print(df)
+
+#to do - divide each time stamp by 20 to get millisecond
+#add theta column and see what those values look like when divided by 1.25
