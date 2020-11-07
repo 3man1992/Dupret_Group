@@ -11,4 +11,4 @@ Assumptions made throughout answering questions:
 
 Question 1: Load the spike times (stored in the .res file) along with their associated cell identity (stored in the .clu file for each recorded spike in the .res; the phenotype of which is reported in the .des file). Do you now have the same number of lines extracted from the .res and the .clu files? That is, are these two files correctly aligned in your analytical framework? Do not forget, cluster 1 should not be used. So spare memory allocation and processing time on your computer!
 
-Answer 1: ![Screenshot 2020-11-07 at 10.45.13](/Users/laurence/Library/Application Support/typora-user-images/Screenshot 2020-11-07 at 10.45.13.png)
+Answer 1: <img width="1107" alt="Screenshot 2020-11-07 at 10 50 04" src="https://user-images.githubusercontent.com/22481774/98439114-650fca80-20e7-11eb-9ee3-565628ea8e85.png">
