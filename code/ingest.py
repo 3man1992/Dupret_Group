@@ -3,7 +3,7 @@ import pandas as pd
 # Extend dataframe printing lenght
 # pd.set_option("display.max_rows", None, "display.max_columns", None)
 
-#Ingest data
+#Ingest data - Question 1
 def create_df():
     spiketimes_file = "/Users/laurence/Desktop/Neuroscience/Dupret_Group/dataset_student_training/mvl10-200109_2.res"
     clusterID_file = "/Users/laurence/Desktop/Neuroscience/Dupret_Group/dataset_student_training/mvl10-200109_2.clu"
@@ -34,10 +34,8 @@ def create_df():
     df = df.rename(columns={ df.columns[2]: "Phenotype (.des)" })
     return(df)
 
-#Filter def / Remove cluster 0 and cluster 1 as per document ask
 df = create_df()
 print(df)
-
 
 #Tests
 # print(df)
