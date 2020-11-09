@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 # Extend dataframe printing lenght
 # pd.set_option("display.max_rows", None, "display.max_columns", None)
@@ -34,11 +35,36 @@ def create_df():
     df = df.rename(columns={ df.columns[2]: "Phenotype (.des)" })
     return(df)
 
-df = create_df()
-print(df)
+#Question 2
+def compute_firing_rate():
+    df = create_df()
+
+    #Convert spike times to milliseconds
+    df["Spike Times(.res)"] = df["Spike Times(.res)"] / 20
+    bins = np.array([0,100,200,300,400,500])
+
+    #Create Seperate DFs for cell types
+    p1 = df.loc[(df["Phenotype (.des)"] == "p1")]
+    b1 = df.loc[(df["Phenotype (.des)"] == "b1")]
+
+    #How many cells are there
+    cell_counts = df["Phenotype (.des)"].value_counts()
+    num_p1 = 66042
+    num_b1 = 2663
+
+    #Counts
+    p1_counts, bin_edges = np.histogram(p1["Spike Times(.res)"], bins=bins)
+    b1_counts, bin_edges = np.histogram(b1["Spike Times(.res)"], bins=bins)
+
+    #Firing rate calculations
+    p1_average_firing_rate_seconds = (np.mean(p1_counts)/num_p1)*10
+    b1_average_firing_rate_seconds = (np.mean(b1_counts)/num_b1)*10
+    print("Firing rate for P1 cells (spike/s):",p1_average_firing_rate_seconds)
+    print("Firing rate for B1 cells (spike/s):",b1_average_firing_rate_seconds)
+    # print(df.describe())
 
 #Tests
-# print(df)
+compute_firing_rate()
 
 #to do - divide each time stamp by 20 to get millisecond
 #add theta column and see what those values look like when divided by 1.25

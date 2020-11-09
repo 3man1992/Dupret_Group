@@ -6,6 +6,7 @@ Assumptions made throughout answering questions:
 
 - .res and .clu are from mvl10-200109_2 whereas .des is from mnl10-200109 (session 1 I assume) therefore the data provided might be from different sessions
 - Assume the index of .des = cluster ID. So index 0 = cluster ID 1, and index 1 = Cluster ID 2 so I can remove index 0 as it relates to cluster ID as per document request
+- .res data is a sample every 0.05ms as per the 20hZ sampling rate, thus .res / 20 = conversion into a millisecond unit
 
 **Question(s) to be asked using the data:** from increasing levels of complexity (with no real upper limit!)
 
